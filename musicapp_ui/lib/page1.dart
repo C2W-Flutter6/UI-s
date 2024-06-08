@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 
 class GetStarted extends StatefulWidget {
   const GetStarted({super.key});
@@ -17,11 +15,15 @@ class _GetStartedState extends State {
         decoration: const BoxDecoration(
           color: Colors.black,
         ),
-        child: const Column(children: [
-          //Image
-          //2 Elevated Buttons
-          //Text
-        ]),
+        child: const Column(
+          children: [
+            //Image
+
+            //2 Elevated Buttons
+
+            //Text
+          ],
+        ),
       ),
     );
   }

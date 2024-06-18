@@ -50,7 +50,7 @@ class _GetstartedState extends State {
                 const SizedBox(height: 10),
                 ElevatedButton(
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(
+                    backgroundColor: WidgetStateProperty.all<Color>(
                       Colors.blue,
                     ),
                   ),

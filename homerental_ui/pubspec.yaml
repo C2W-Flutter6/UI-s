@@ -20,4 +20,5 @@ flutter:
   assets: 
     - assets/bg_img1.jpg
     - assets/home_img_1.png
+    - assets/home_img_2.jpg
 

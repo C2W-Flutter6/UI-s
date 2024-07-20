@@ -56,7 +56,6 @@ class _HomeScreenState extends State {
               ],
             ),
             //TextField
-
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -104,7 +103,7 @@ class _HomeScreenState extends State {
             ),
             //ItemBuilder
             SizedBox(
-              height: 105, // Adjust height as per your design
+              height: 400, // Adjust height as per your design
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: rate.length,
@@ -118,73 +117,71 @@ class _HomeScreenState extends State {
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         //image row
-                        Row(
+
+                        const Stack(
                           children: [
-                            Stack(
-                              children: [
-                                Image(
-                                  image: AssetImage('assets/home_img_2.jpg'),
-                                  width: 100, // Add a width constraint
-                                  height: 100, // Add a height constraint
-                                  fit: BoxFit
-                                      .cover, // Ensure the image fits within the constraints
-                                ),
-                                Positioned(
-                                  top: 50,
-                                  right: 70,
-                                  width: 45,
-                                  height: 21.56,
-                                  child: Row(
-                                    children: const [
-                                      Icon(Icons.star, color: Colors.yellow),
-                                      Text(
-                                        "4.9",
-                                        style: TextStyle(color: Colors.white),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
+                            Image(
+                              image: AssetImage('assets/home_img_2.jpg'),
+                              width: 100, // Add a width constraint
+                              height: 100, // Add a height constraint
+                              fit: BoxFit
+                                  .cover, // Ensure the image fits within the constraints
                             ),
-                            //Row2
-                            SizedBox(height: 10),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                            Positioned(
+                              top: 50,
+                              right: 70,
+                              width: 45,
+                              height: 21.56,
+                              child: Row(
+                                children: [
+                                  Icon(Icons.star, color: Colors.yellow),
+                                  Text(
+                                    "4.9",
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                        //Row2
+                        //SizedBox(height: 10),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Night Hill Villa",
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            //SizedBox(height: 10),
+                            Text(
+                              "London, Night Hill",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            // SizedBox(height: 10),
+                            Row(
                               children: [
                                 Text(
-                                  "Night Hill Villa",
+                                  "${rate[index]}",
                                   style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w600,
-                                  ),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w600),
                                 ),
-                                SizedBox(height: 10),
                                 Text(
-                                  "London, Night Hill",
+                                  "/Month",
                                   style: TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                                SizedBox(height: 10),
-                                Row(
-                                  children: [
-                                    Text(
-                                      "${rate[index]}",
-                                      style: TextStyle(
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w600),
-                                    ),
-                                    Text(
-                                      "/Month",
-                                      style: TextStyle(
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.w500),
-                                    ),
-                                  ],
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w500),
                                 ),
                               ],
                             ),

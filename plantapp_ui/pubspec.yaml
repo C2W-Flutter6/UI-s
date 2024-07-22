@@ -17,3 +17,6 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/plant_img_1.jpg
+    - assets/bg_img_1.webp

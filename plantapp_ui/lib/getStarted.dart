@@ -1,6 +1,7 @@
+// ignore_for_file: file_names, camel_case_types
+
 import 'package:flutter/material.dart';
 
-// ignore: camel_case_types
 class getStarted extends StatefulWidget {
   const getStarted({super.key});
 
@@ -12,7 +13,7 @@ class _getStartedState extends State<getStarted> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 237, 246, 250),
+      backgroundColor: const Color.fromARGB(255, 250, 250, 250),
       body: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -20,20 +21,20 @@ class _getStartedState extends State<getStarted> {
           children: [
             Image.asset(
               "assets/bg_img_1.webp",
-              color: Colors.white.withOpacity(0.1), // Adjust opacity as needed
+              color: Colors.white.withOpacity(0), // Adjust opacity as needed
               colorBlendMode: BlendMode.srcATop,
             ),
             const SizedBox(height: 10),
             Container(
-              padding: EdgeInsets.all(2),
-              height: 100,
+              padding: const EdgeInsets.all(6),
+              height: 90,
               //color: Colors.grey,
-              child: Text.rich(
+              child: const Text.rich(
                 TextSpan(
                   text: "Enjoy your \nlife with ",
                   style: TextStyle(
-                    fontSize: 22,
-                    height: 2,
+                    fontSize: 27,
+                    height: 1.3,
                     fontWeight: FontWeight.w400,
                   ),
                   children: <TextSpan>[
@@ -49,18 +50,18 @@ class _getStartedState extends State<getStarted> {
             ),
             const SizedBox(height: 30),
             Container(
-              margin: EdgeInsets.only(
+              margin: const EdgeInsets.only(
                 left: 20,
                 right: 20,
               ),
               decoration: BoxDecoration(
-                gradient: LinearGradient(
+                gradient: const LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   //stops: [0.7, 0.3],
                   colors: [
-                    const Color.fromARGB(255, 68, 170, 72),
-                    const Color.fromARGB(255, 27, 67, 28),
+                    Color.fromARGB(255, 85, 214, 89),
+                    Color.fromARGB(255, 51, 123, 54),
                   ],
                 ),
                 borderRadius: BorderRadius.circular(12),
@@ -68,11 +69,11 @@ class _getStartedState extends State<getStarted> {
               child: TextButton(
                 style: ButtonStyle(
                   minimumSize: WidgetStateProperty.all(
-                    Size(double.maxFinite, 55),
+                    const Size(double.maxFinite, 55),
                   ),
                 ),
                 onPressed: () {},
-                child: Text(
+                child: const Text(
                   "Get Started  > ",
                   style: TextStyle(
                     color: Colors.white,

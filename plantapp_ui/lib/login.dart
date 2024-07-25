@@ -151,6 +151,10 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
+            const SizedBox(
+              height: 40,
+            ),
+            Image.asset("assets/plant_img_2.png"),
           ],
         ),
       ),

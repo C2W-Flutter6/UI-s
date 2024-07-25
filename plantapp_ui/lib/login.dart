@@ -64,7 +64,7 @@ class _LoginPageState extends State<LoginPage> {
               borderRadius: BorderRadius.circular(12),
               child: Container(
                 width: 320,
-                height: 40,
+                height: 44,
                 color: const Color.fromRGBO(255, 255, 255, 1),
                 child: TextField(
                   onTap: () {},
@@ -116,7 +116,7 @@ class _LoginPageState extends State<LoginPage> {
                 bottom: 8,
               ),
               width: 320,
-              height: 40,
+              height: 45,
               decoration: BoxDecoration(
                 gradient: const LinearGradient(
                   begin: Alignment.topCenter,

@@ -13,36 +13,36 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(251, 247, 248, 1),
-      body: SingleChildScrollView(
+      body: Center(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
               width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
+              height: MediaQuery.of(context).size.height / 4.2,
               child: Stack(
                 children: [
                   Positioned(
-                    top: -(MediaQuery.of(context).size.height / 9),
-                    left: -(MediaQuery.of(context).size.width / 10),
+                    top: -(MediaQuery.of(context).size.height / 18),
+                    left: -(MediaQuery.of(context).size.width / 9),
                     child: Circle(
-                      radius: MediaQuery.of(context).size.width / 6,
+                      radius: MediaQuery.of(context).size.width / 5.5,
                       borderColor: Colors.green[100]!,
                     ),
                   ),
                   Positioned(
-                    top: MediaQuery.of(context).size.height / 14,
-                    left: MediaQuery.of(context).size.width / 5.5,
-                    child: Circle(
-                      radius: MediaQuery.of(context).size.width / 8,
-                      borderColor: Colors.green[100]!,
-                    ),
-                  ),
-                  Positioned(
-                    top: MediaQuery.of(context).size.height / 2.9,
-                    left: MediaQuery.of(context).size.width / 2.9,
+                    top: MediaQuery.of(context).size.height / 30,
+                    left: MediaQuery.of(context).size.width / 6,
                     child: Circle(
                       radius: MediaQuery.of(context).size.width / 10,
+                      borderColor: Colors.green[100]!,
+                    ),
+                  ),
+                  Positioned(
+                    top: MediaQuery.of(context).size.height / 9,
+                    left: MediaQuery.of(context).size.width / 3.5,
+                    child: Circle(
+                      radius: MediaQuery.of(context).size.width / 14,
                       borderColor: Colors.green[100]!,
                     ),
                   ),
@@ -50,55 +50,51 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             Container(
-              margin: const EdgeInsets.all(10),
-              width: 108,
-              height: 55,
+              margin: const EdgeInsets.all(2),
               child: Text(
                 "Log in",
                 style: GoogleFonts.poppins(
-                  fontSize: 35,
+                  fontSize: 30,
                   fontWeight: FontWeight.w600,
                 ),
               ),
             ),
-            const SizedBox(height: 30),
+            const SizedBox(height: 12),
             ClipRRect(
-              borderRadius: BorderRadius.circular(
-                  12), // Set border radius for the container
+              borderRadius: BorderRadius.circular(12),
               child: Container(
                 width: 320,
-                height: 50,
+                height: 40,
                 color: const Color.fromRGBO(255, 255, 255, 1),
                 child: TextField(
                   onTap: () {},
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: const Color.fromRGBO(255, 255, 255, 1),
-                    contentPadding: const EdgeInsets.symmetric(
-                        vertical: 15.0, horizontal: 20.0),
+                    contentPadding: const EdgeInsets.only(
+                      top: 10,
+                      bottom: 10,
+                    ),
                     prefixIcon: Transform.rotate(
                       angle: 0.1, // Adjust the angle as needed (in radians)
                       child: const Icon(
                         Icons.call,
-                        color: const Color.fromRGBO(
-                            164, 164, 164, 1), // Set the desired color here
+                        color: Color.fromRGBO(164, 164, 164, 1),
                       ),
                     ),
                     prefixIconConstraints: const BoxConstraints(
-                      minWidth: 70,
+                      minWidth: 50,
                       minHeight: 50,
                     ),
                     enabledBorder: OutlineInputBorder(
-                      borderRadius:
-                          BorderRadius.circular(12), // Circular border radius
+                      borderRadius: BorderRadius.circular(12),
                       borderSide: const BorderSide(
                         width: 1,
                         color: Color.fromRGBO(204, 211, 196, 1),
                       ),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderRadius:
-                          BorderRadius.circular(12), // Circular border radius
+                      borderRadius: BorderRadius.circular(12),
                       borderSide: const BorderSide(
                         width: 1,
                         color: Color.fromRGBO(204, 211, 196, 1),
@@ -107,26 +103,24 @@ class _LoginPageState extends State<LoginPage> {
                     hintText: "Mobile Number",
                     hintStyle: GoogleFonts.inter(
                       color: const Color.fromRGBO(164, 164, 164, 1),
-                      fontSize: 15,
+                      fontSize: 13,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
                 ),
               ),
             ),
-            SizedBox(height: 30),
             Container(
-              width: 320,
-              height: 50,
               margin: const EdgeInsets.only(
-                left: 20,
-                right: 20,
+                top: 20,
+                bottom: 8,
               ),
+              width: 320,
+              height: 40,
               decoration: BoxDecoration(
                 gradient: const LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  //stops: [0.7, 0.3],
                   colors: [
                     Color.fromARGB(255, 79, 193, 83),
                     Color.fromARGB(255, 45, 108, 47),
@@ -135,14 +129,9 @@ class _LoginPageState extends State<LoginPage> {
                 borderRadius: BorderRadius.circular(12),
               ),
               child: TextButton(
-                style: ButtonStyle(
-                  minimumSize: WidgetStateProperty.all(
-                    const Size(double.maxFinite, 55),
-                  ),
-                ),
                 onPressed: () {},
                 child: Text(
-                  "Log in ",
+                  "Log in",
                   style: GoogleFonts.rubik(
                     fontWeight: FontWeight.w500,
                     fontSize: 20,
@@ -151,10 +140,10 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-            const SizedBox(
-              height: 40,
+            const SizedBox(height: 10),
+            Flexible(
+              child: Image.asset("assets/plant_img_2.png"),
             ),
-            Image.asset("assets/plant_img_2.png"),
           ],
         ),
       ),

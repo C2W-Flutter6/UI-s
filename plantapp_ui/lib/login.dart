@@ -12,46 +12,39 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Stack(
-            children: [
-              Align(
-                alignment: Alignment.centerRight,
-                child: Container(
-                  width: MediaQuery.of(context).size.width /
-                      2, // Adjust width as needed
-                  height: MediaQuery.of(context).size.height,
-                  child: Stack(
-                    children: [
-                      Positioned(
-                        top: MediaQuery.of(context).size.height / 4,
-                        right: MediaQuery.of(context).size.width / 6,
-                        child: Circle(
-                          radius: MediaQuery.of(context).size.width / 8,
-                          color: Colors.green[100]!,
-                        ),
-                      ),
-                      Positioned(
-                        top: MediaQuery.of(context).size.height / 3,
-                        right: MediaQuery.of(context).size.width / 3,
-                        child: Circle(
-                          radius: MediaQuery.of(context).size.width / 5,
-                          color: Colors.green[100]!,
-                        ),
-                      ),
-                      Positioned(
-                        top: MediaQuery.of(context).size.height / 2,
-                        right: MediaQuery.of(context).size.width / 5,
-                        child: Circle(
-                          radius: MediaQuery.of(context).size.width / 10,
-                          color: Colors.green[100]!,
-                        ),
-                      ),
-                    ],
+          Container(
+            width: MediaQuery.of(context).size.width, // Adjust width as needed
+            height: MediaQuery.of(context).size.height,
+            child: Stack(
+              children: [
+                Positioned(
+                  top: -(MediaQuery.of(context).size.height / 9),
+                  left: -(MediaQuery.of(context).size.width / 10),
+                  child: Circle(
+                    radius: MediaQuery.of(context).size.width / 6,
+                    borderColor: Colors.green[100]!,
                   ),
                 ),
-              ),
-            ],
+                Positioned(
+                  top: MediaQuery.of(context).size.height / 14,
+                  left: MediaQuery.of(context).size.width / 5.5,
+                  child: Circle(
+                    radius: MediaQuery.of(context).size.width / 8,
+                    borderColor: Colors.green[100]!,
+                  ),
+                ),
+                Positioned(
+                  top: MediaQuery.of(context).size.height / 2.9,
+                  left: MediaQuery.of(context).size.width / 2.9,
+                  child: Circle(
+                    radius: MediaQuery.of(context).size.width / 10,
+                    borderColor: Colors.green[100]!,
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),
@@ -61,9 +54,9 @@ class _LoginPageState extends State<LoginPage> {
 
 class Circle extends StatelessWidget {
   final double radius;
-  final Color color;
+  final Color borderColor;
 
-  Circle({required this.radius, required this.color});
+  const Circle({super.key, required this.radius, required this.borderColor});
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +65,8 @@ class Circle extends StatelessWidget {
       height: radius * 2,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        border: Border.all(color: color, width: 2.0),
+        border: Border.all(color: borderColor, width: 2.0),
+        color: Colors.transparent, // Make sure the inner part is transparent
       ),
     );
   }

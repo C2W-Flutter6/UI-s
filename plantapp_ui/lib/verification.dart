@@ -291,6 +291,7 @@ class VerificationPageState extends State<VerificationPage> {
                   ],
                 ),
                 const SizedBox(height: 20),
+                //Submit Button
                 Container(
                   margin: const EdgeInsets.only(
                     top: 20,

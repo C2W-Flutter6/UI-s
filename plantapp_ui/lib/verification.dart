@@ -1,5 +1,9 @@
+// ignore_for_file: sized_box_for_whitespace
+
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'dart:developer';
 
 class VerificationPage extends StatefulWidget {
   const VerificationPage({super.key});
@@ -21,10 +25,15 @@ class VerificationPageState extends State<VerificationPage> {
             ),
             child: Row(
               children: [
-                const Icon(Icons.arrow_back),
+                GestureDetector(
+                  onTap: () {
+                    log("Icon Tapped");
+                  },
+                  child: const Icon(Icons.arrow_back),
+                ),
                 Expanded(
                   child: Container(
-                    height: MediaQuery.of(context).size.height / 4.2,
+                    height: MediaQuery.of(context).size.height / 4.1,
                     child: Stack(
                       children: [
                         Positioned(
@@ -59,19 +68,19 @@ class VerificationPageState extends State<VerificationPage> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: Column(
               children: [
+                //Verification text
                 Text(
                   "Verification",
                   style: GoogleFonts.poppins(
-                    fontSize: 20,
+                    fontSize: 24,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
-                SizedBox(
-                  height: 10,
-                ),
+                const SizedBox(height: 15),
+                //"Enter OTP that we sent" text
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
@@ -79,19 +88,20 @@ class VerificationPageState extends State<VerificationPage> {
                       textAlign: TextAlign.left,
                       "Enter the OTP code from the phone we \njust sent you.",
                       style: GoogleFonts.poppins(
-                        fontSize: 14,
+                        fontSize: 16,
                         fontWeight: FontWeight.w400,
                       ),
                     ),
                   ],
                 ),
                 const SizedBox(height: 20),
+                //OTP boxes
                 Row(
                   children: [
                     Container(
                       width: 56,
                       height: 56,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         boxShadow: [
                           BoxShadow(
                             color: Color.fromRGBO(0, 0, 0, 0.06),
@@ -103,10 +113,10 @@ class VerificationPageState extends State<VerificationPage> {
                       child: TextField(
                         decoration: InputDecoration(
                           filled: true,
-                          fillColor: Color.fromRGBO(255, 255, 255, 1),
+                          fillColor: const Color.fromRGBO(255, 255, 255, 1),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Color.fromRGBO(204, 211, 196, 1),
                             ),
                           ),
@@ -127,11 +137,11 @@ class VerificationPageState extends State<VerificationPage> {
                         ),
                       ),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     Container(
                       width: 56,
                       height: 56,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         boxShadow: [
                           BoxShadow(
                             color: Color.fromRGBO(0, 0, 0, 0.06),
@@ -143,10 +153,10 @@ class VerificationPageState extends State<VerificationPage> {
                       child: TextField(
                         decoration: InputDecoration(
                           filled: true,
-                          fillColor: Color.fromRGBO(255, 255, 255, 1),
+                          fillColor: const Color.fromRGBO(255, 255, 255, 1),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Color.fromRGBO(204, 211, 196, 1),
                             ),
                           ),
@@ -167,11 +177,11 @@ class VerificationPageState extends State<VerificationPage> {
                         ),
                       ),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     Container(
                       width: 56,
                       height: 56,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         boxShadow: [
                           BoxShadow(
                             color: Color.fromRGBO(0, 0, 0, 0.06),
@@ -183,10 +193,10 @@ class VerificationPageState extends State<VerificationPage> {
                       child: TextField(
                         decoration: InputDecoration(
                           filled: true,
-                          fillColor: Color.fromRGBO(255, 255, 255, 1),
+                          fillColor: const Color.fromRGBO(255, 255, 255, 1),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Color.fromRGBO(204, 211, 196, 1),
                             ),
                           ),
@@ -207,11 +217,11 @@ class VerificationPageState extends State<VerificationPage> {
                         ),
                       ),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     Container(
                       width: 56,
                       height: 56,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         //color: Color.fromRGBO(255, 255, 255, 1),
                         boxShadow: [
                           BoxShadow(
@@ -224,10 +234,10 @@ class VerificationPageState extends State<VerificationPage> {
                       child: TextField(
                         decoration: InputDecoration(
                           filled: true,
-                          fillColor: Color.fromRGBO(255, 255, 255, 1),
+                          fillColor: const Color.fromRGBO(255, 255, 255, 1),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Color.fromRGBO(204, 211, 196, 1),
                             ),
                           ),
@@ -249,6 +259,74 @@ class VerificationPageState extends State<VerificationPage> {
                       ),
                     ),
                   ],
+                ),
+                const SizedBox(height: 20),
+                //Resend code
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  //mainAxisSize: MainAxisSize.min,
+                  children: [
+                    RichText(
+                      text: TextSpan(
+                        text: "Didn't receive OTP code? ",
+                        style: GoogleFonts.poppins(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.black),
+                        children: [
+                          TextSpan(
+                              text: "Resend",
+                              style: GoogleFonts.poppins(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.black,
+                              ),
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () {
+                                  log("Resend code");
+                                }),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 20),
+                Container(
+                  margin: const EdgeInsets.only(
+                    top: 20,
+                    bottom: 8,
+                  ),
+                  width: 320,
+                  height: 45,
+                  decoration: BoxDecoration(
+                    boxShadow: const [
+                      BoxShadow(
+                        blurRadius: 40,
+                        offset: Offset(0, 30),
+                        color: Color.fromRGBO(0, 0, 0, 0.15),
+                      ),
+                    ],
+                    gradient: const LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Color.fromARGB(255, 79, 193, 83),
+                        Color.fromARGB(255, 45, 108, 47),
+                      ],
+                    ),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      "Submit",
+                      style: GoogleFonts.rubik(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 20,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),

@@ -118,6 +118,13 @@ class _LoginPageState extends State<LoginPage> {
               width: 320,
               height: 45,
               decoration: BoxDecoration(
+                boxShadow: const [
+                  BoxShadow(
+                    blurRadius: 40,
+                    offset: Offset(0, 30),
+                    color: Color.fromRGBO(0, 0, 0, 0.15),
+                  ),
+                ],
                 gradient: const LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,

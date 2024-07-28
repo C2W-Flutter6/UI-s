@@ -20,3 +20,4 @@ flutter:
   assets:
     - assets/plant_img_2.png
     - assets/bg_img_1.webp
+    - assets/listView_plant.png

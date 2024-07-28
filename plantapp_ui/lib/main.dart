@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 //import 'getStarted.dart';
 //import 'login.dart';
-import 'verification.dart';
+//import 'verification.dart';
+import 'home.dart';
 
 void main() {
   runApp(const MainApp());
@@ -13,7 +14,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: VerificationPage(),
+      home: HomePage(),
       debugShowCheckedModeBanner: false,
     );
   }

@@ -13,7 +13,8 @@ class _DetailScreenState extends State<DetailScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.only(left: 20, right: 20, top: 40, bottom: 40),
+        padding:
+            const EdgeInsets.only(left: 20, right: 20, top: 40, bottom: 40),
         child: Column(
           children: [
             //Row 1: back arrow key
@@ -33,10 +34,49 @@ class _DetailScreenState extends State<DetailScreen> {
               children: [
                 Image.asset(
                   "assets/snakePlant.png",
-                  width: 195,
+                  width: 250,
                   height: 243,
                 ),
               ],
+            ),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  height: 8,
+                  width: 8,
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Color.fromRGBO(62, 102, 24, 1),
+                  ),
+                ),
+                Container(
+                  margin: const EdgeInsets.only(left: 5, right: 5),
+                  height: 8,
+                  width: 8,
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Color.fromRGBO(197, 214, 181, 1),
+                  ),
+                ),
+                Container(
+                  height: 8,
+                  width: 8,
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Color.fromRGBO(197, 214, 181, 1),
+                  ),
+                ),
+              ],
+            ),
+            const Text(
+              "Snake Plants",
+              style: TextStyle(
+                fontWeight: FontWeight.w600,
+                fontSize: 22,
+                color: Color.fromRGBO(48, 48, 48, 1),
+              ),
             ),
           ],
         ),
